@@ -4,11 +4,13 @@ var mongoose = require('mongoose');
 var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var dotenv = require('dotenv');
 
 var index = require('./routes/index');
 
 // connect to database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shortUrls');
+dotenv.config();
+mongoose.connect(process.env.MONGODB_URI);
 
 var app = express();
 
