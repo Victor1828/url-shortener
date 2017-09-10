@@ -1,5 +1,22 @@
 extends layout
+var url = requires()
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 URL Shortener Microservice
+  h2 Users stories:
+  ul
+    li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+    li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+  ul
+  h2 Example usage:
+  code https://vegashort-url.herokuapp.com/new/https://www.google.com
+  br
+  code https://vegashort-url.herokuapp.com/new/https://www.facebook.com
+  h2 Expected output:
+  code { "original_url":"https://www.google.com", "short_url":"https://little-url.herokuapp.com/8170" }
+  br
+  section(ng-controller='shortCtrl')
+    input(placeholder="Enter URL..." ng-model='urlToShorten' onkeypress="if (event.which==13) document.querySelector('a').click()")
+    button
+      a(href='new/{{urlToShorten}}')="Get short URL"
+

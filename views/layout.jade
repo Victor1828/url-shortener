@@ -1,7 +1,9 @@
 doctype html
-html
+html(ng-app='shortUrl')
   head
-    title= title
+    title URL Shortener Microservice
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js')
+    script(src='/javascripts/app.js')
   body
     block content
