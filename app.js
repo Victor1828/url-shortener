@@ -6,7 +6,6 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var shortUrl = require('./public/javascripts/url');
 
 // connect to database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shortUrls');

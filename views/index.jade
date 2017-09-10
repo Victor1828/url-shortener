@@ -1,5 +1,4 @@
 extends layout
-var url = requires()
 
 block content
   h1 URL Shortener Microservice
@@ -13,8 +12,9 @@ block content
   br
   code https://vegashort-url.herokuapp.com/new/https://www.facebook.com
   h2 Expected output:
-  code { "original_url":"https://www.google.com", "short_url":"https://little-url.herokuapp.com/8170" }
+  code { "original_url":"https://www.google.com", "short_url":"https://vegashort-url.herokuapp.com/8170" }
   br
+  h2 Try it!
   section(ng-controller='shortCtrl')
     input(placeholder="Enter URL..." ng-model='urlToShorten' onkeypress="if (event.which==13) document.querySelector('a').click()")
     button
